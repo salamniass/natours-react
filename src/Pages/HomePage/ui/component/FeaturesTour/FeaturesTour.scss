@@ -1,0 +1,156 @@
+@import "../../../../../styles/functions.scss", "../../../../../styles/typographies.scss", "../../../../../styles/variables.scss", "../../../../../styles/utilities.scss";
+
+.section-tours {
+  background-color: $color-grey-light-1;
+  padding: 20rem 0 4rem 0;
+  margin-top: -10rem;
+}
+
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 38rem;
+
+  &__side {
+    color: white;
+    font-size: 2rem;
+
+    height: 38rem;
+    transition: all 0.7s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    box-shadow: 0 1.3rem 3rem rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+
+    &--front {
+      background-color: $color-white;
+    }
+    &--back {
+      transform: rotateY(180deg);
+      &-1 {
+        background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+      }
+
+      &-2 {
+        background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
+      }
+
+      &-3 {
+        background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+      }
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0deg);
+  }
+
+  // Front side styling
+  &__picture {
+    background-size: cover;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 87%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 87%, 0 100%);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    &--1 {
+      background-blend-mode: screen;
+      background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url(../../../../../resources/images/nat-5.jpg);
+      min-height: rem(230px);
+    }
+
+    &--2 {
+      background-blend-mode: screen;
+      background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark), url(../../../../../resources/images/nat-6.jpg);
+      min-height: rem(230px);
+    }
+
+    &--3 {
+      background-blend-mode: screen;
+      background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark), url(../../../../../resources/images/nat-7.jpg);
+      min-height: rem(230px);
+    }
+  }
+
+  &__heading {
+    font-size: 1.6rem;
+    font-weight: 300;
+    text-align: right;
+    text-transform: uppercase;
+    color: $color-white;
+    position: absolute;
+    top: 10rem;
+    right: 1.3rem;
+    width: 65%;
+  }
+
+  &__heading-span {
+    padding: 0.6rem 0.9rem;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+
+    &--1 {
+      background-image: linear-gradient(to right bottom, rgba($color-secondary-light, 0.85), rgba($color-secondary-dark, 0.85));
+    }
+
+    &--2 {
+      background-image: linear-gradient(to right bottom, rgba($color-tertiary-light, 0.85), rgba($color-tertiary-dark, 0.85));
+    }
+
+    &--3 {
+      background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.85), rgba($color-primary-dark, 0.85));
+    }
+  }
+
+  &__details {
+    padding: 3rem;
+    color: $color-grey-dark-2;
+    ul {
+      list-style: none;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+
+      li {
+        text-align: center;
+        font-size: 1rem;
+        padding: 1rem;
+        &:not(:last-child) {
+          border-bottom: 1px solid #eee;
+        }
+      }
+    }
+  }
+
+  // FRONT SIDE STYLING
+  &__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+  }
+
+  &__price-box {
+    text-align: center;
+    margin-bottom: rem(50px);
+    color: $color-white;
+  }
+  &__price-only {
+    font-size: rem(20px);
+    text-transform: uppercase;
+  }
+  &__price-value {
+    font-size: rem(50px);
+    font-weight: 100;
+  }
+}

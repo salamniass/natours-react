@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 100%;
+}
+
 body {
   @include SFProRegular;
   //background-color: yellow;
@@ -14,3 +18,5 @@ body {
   color: #777;
   padding: 20px;
 }
+
+// Grid System layout

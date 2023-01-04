@@ -1,0 +1,75 @@
+@import "../../../../../styles/functions.scss", "../../../../../styles/typographies.scss", "../../../../../styles/variables.scss", "../../../../../styles/utilities.scss";
+.section-about {
+  background-color: $color-grey-light-1;
+  padding: rem(250px) 0;
+  margin-top: -20vh;
+}
+
+// Typograpgies
+.heading-secondary {
+  font-size: rem(35px);
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 1px;
+  //transition: all 0.2s ease-in;
+
+  // &:hover {
+  //   transform: skewY(2deg);
+  // }
+}
+.heading-tertiary {
+  font-size: rem(16px);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: rem(16px);
+
+  &:not(:last-child) {
+    margin-bottom: rem(30px);
+  }
+}
+
+.composition {
+  position: relative;
+
+  &__photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+    position: absolute;
+    z-index: 10;
+    transition: all 0.2s;
+    outline-offset: 0.8rem;
+
+    &--p1 {
+      left: 0;
+      top: -2rem;
+    }
+
+    &--p2 {
+      right: 0;
+      top: 2rem;
+    }
+
+    &--p3 {
+      left: 20%;
+      top: 10rem;
+    }
+    &:hover {
+      outline: 0.8rem solid $color-primary;
+      transform: scale(1.05);
+      box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.4);
+      z-index: 20;
+    }
+  }
+
+  &:hover &__photo:not(:hover) {
+    transform: scale(0.9);
+  }
+}

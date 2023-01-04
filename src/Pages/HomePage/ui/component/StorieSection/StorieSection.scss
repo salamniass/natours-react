@@ -1,0 +1,88 @@
+@import "../../../../../styles/functions.scss", "../../../../../styles/typographies.scss", "../../../../../styles/variables.scss", "../../../../../styles/utilities.scss";
+
+.section-stories {
+  padding: 7rem 0;
+  //background-color: $color-grey-light-1;
+  text-align: center;
+  position: relative;
+}
+
+.story {
+  width: 75%;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 2rem 4rem rgba($color-black, 0.1);
+  background-color: rgba($color-white, 0.6);
+  border-radius: 3px;
+  padding: rem(60px);
+  font-size: rem(16px);
+  padding-left: rem(90px);
+  transform: skewX(-12deg);
+
+  &__shape {
+    width: rem(150px);
+    height: rem(150px);
+    float: left;
+    // background-color: orangered;
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    transform: translateX(-1rem) skewX(12deg);
+    position: relative;
+  }
+
+  &__image {
+    height: 100%;
+    transform: translateX(-2rem) scale(1.4);
+    transition: all 0.5s;
+    backface-visibility: hidden;
+  }
+
+  &__text {
+    transform: skewX(12deg);
+  }
+
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    opacity: 0;
+    color: $color-white;
+    font-size: rem(17px);
+    text-align: center;
+    transition: all 0.5s;
+    backface-visibility: hidden;
+    z-index: 3;
+  }
+
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    text-shadow: 0 0 6px rgba($color-black, 0.9);
+  }
+
+  &:hover &__image {
+    transform: translateX(-2rem) scale(1);
+    filter: blur(3px) brightness(80%);
+  }
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -6;
+  opacity: 0.15;
+  overflow: hidden;
+
+  &__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}

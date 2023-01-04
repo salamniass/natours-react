@@ -1,6 +1,7 @@
 import "./Header.scss"
 import logo from "../../../resources/images/logo-white.png"
 import React from "react"
+import Button from "../../atoms/Button/Button"
 
 function Header() {
   return (
@@ -14,9 +15,7 @@ function Header() {
             <span className="heading-primary--main">Outdoors</span>
             <span className="heading-primary--sub">is where life happens</span>
           </h1>
-          <a className="btn btn--white btn--animated" href="">
-            Discover our tours
-          </a>
+          <Button text="Discover our tours" btnWhite={true} btnAnimated={true} />
         </div>
       </header>
     </>

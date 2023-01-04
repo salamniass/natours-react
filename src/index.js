@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client"
 //import './index.css';
 import HomePage from "./Pages/HomePage/HomePage"
 import reportWebVitals from "./reportWebVitals"
+//import Layout from "./ui/organims/Layout/Layout"
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(
